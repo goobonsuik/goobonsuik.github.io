@@ -30,18 +30,18 @@ const About = () => {
         <Block>
           <S.Box>
             <ul>
-              {/* <li>1984년생.</li>
+              <li>1984년생.</li>
               <li>만화애니메이션학과 졸업.</li>
               <li>이러닝 업계에서 애니파트 쭈욱 작업.</li>
               <li>애니메이트(구 플래시), 에프터이펙트, </li>
               <li>포토샵, 일러스트 이용해서 작업.</li>
-              <li>현재는 클립스튜디오 툴 적응중. </li> */}
+              <li>현재는 클립스튜디오 툴 적응중. </li>
             </ul>
           </S.Box>
 
           <S.Box>
             <S.Gif
-              $bg={"/goobonsuik/project/dist/images/main.gif"}
+              $bg={"/images/main.gif"}
               $wid={"400px"}
               $hei={"400px"}
             ></S.Gif>
@@ -50,7 +50,7 @@ const About = () => {
       </Section>
 
       <Block>
-        <S.Gif $bg={"/goobonsuik/project/dist/images/main02.gif"} $wid={"150px"} $hei={"150px"}></S.Gif>
+        <S.Gif $bg={"/images/main02.gif"} $wid={"150px"} $hei={"150px"}></S.Gif>
       </Block>
     </S.Wrap>
   );

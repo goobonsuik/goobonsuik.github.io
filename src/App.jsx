@@ -7,7 +7,6 @@ import styled from "styled-components";
 import S from "./styles/GlobalBlock.jsx";
 import media from "./styles/media.jsx";
 
-import Main from "./pages/Main.jsx";
 import About from "./pages/About.jsx";
 import Project from "./pages/Project.jsx";
 import Painting from "./pages/Painting.jsx";

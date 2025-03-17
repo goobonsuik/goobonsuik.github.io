@@ -7,12 +7,7 @@ import S from "../styles/GlobalBlock.jsx";
 
 import Top from "/public/images/top-icon.svg?react";
 
-const Inner = styled(S.Inner)`
-  border-bottom: 3px solid #eee;
-`;
-
 const TopBtn = styled.div`
-  // border: 1px solid #ddd;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -37,7 +32,7 @@ function Footer() {
 
   return (
     <S.Wrap>
-      <Inner>
+      <S.Inner>
         <S.FlexBox>
           <p>Follow me :</p>
           <span>instagram</span>
@@ -45,7 +40,7 @@ function Footer() {
         <TopBtn onClick={onMoveToTop}>
           <Top width="50px" height="50px" />
         </TopBtn>
-      </Inner>
+      </S.Inner>
     </S.Wrap>
   );
 }

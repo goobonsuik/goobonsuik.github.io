@@ -40,7 +40,7 @@ const Work = () => {
           <S.Gif
             $wid={"200px"}
             $hei={"200px"}
-            $bg={"/goobonsuik/project/dist/images/main02.gif"}
+            $bg={"/images/main02.gif"}
           ></S.Gif>
         </Block>
       </Section>
