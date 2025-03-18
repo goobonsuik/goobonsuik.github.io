@@ -3,9 +3,10 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import S from "./styles/GlobalBlock.jsx";
 import media from "./styles/media.jsx";
+import theme from "./styles/theme.jsx";
 
 import About from "./pages/About.jsx";
 import Project from "./pages/Project.jsx";
@@ -17,6 +18,7 @@ import Footer from "./components/Footer.jsx";
 function App() {
   return (
     <BrowserRouter>
+    <ThemeProvider theme={{...theme, ...media}}>
       <S.Container>
         <Header />
 
@@ -30,6 +32,7 @@ function App() {
       
         <Footer />
       </S.Container>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

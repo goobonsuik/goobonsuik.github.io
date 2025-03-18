@@ -3,6 +3,8 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 
 import styled, { css } from "styled-components";
 import S from "../styles/GlobalBlock.jsx";
+import media from "../styles/media.jsx";
+
 
 const Section = styled(S.Section)`
   display: flex;
@@ -23,6 +25,11 @@ const Block = styled(S.Block)`
   min-height: 80px;
 
   font-size: 20px;
+
+  ${media.mbl`
+    font-size: 18px;
+    flex-direction: column-reverse;
+  `}
 `;
 
 const Work = () => {
@@ -45,7 +52,7 @@ const Work = () => {
         </Block>
       </Section>
 
-      <Block>
+      <S.NavContainer>
         <S.Box
           onClick={() => {
             navigate("/work");
@@ -60,7 +67,7 @@ const Work = () => {
         >
           painting
         </S.Box>
-      </Block>
+      </S.NavContainer>
 
       <S.Section>
         <Outlet></Outlet>

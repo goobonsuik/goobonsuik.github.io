@@ -12,10 +12,14 @@ import media from "../styles/media.jsx";
 
 const GridWrap = styled(S.GridWrap)`
   gap: 50px 10px;
+  ${media.mbl`
+    gap: 30px 10px;
+  
+    `}
 `;
 const GridItem = styled(S.GridItem)`
-  width: 510px;
-  height: 288px;
+  // width: 510px;
+  // height: 288px;
   // border: 1px solid #ddd;
 
   .react-player {

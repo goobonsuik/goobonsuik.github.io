@@ -4,14 +4,24 @@ import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import S from "../styles/GlobalBlock.jsx";
+import media from "../styles/media.jsx";
 
 const Section = styled(S.Section)`
   display: flex;
   justify-content: center;
+
   // background-color: #fbfbf9;
 
   font-size: 20px;
   font-weight: 600;
+
+  ${media.mbl`
+    margin-bottom: 60px;
+    font-size: 18px;
+  `}
+  ${media.tab`
+    
+  `}
 `;
 
 const Block = styled(S.Block)`
@@ -22,6 +32,18 @@ const Block = styled(S.Block)`
   justify-content: space-evenly;
   align-items: center;
   // border: 1px solid #ddd;
+
+  ${media.mbl`
+gap: 60px;
+    flex-direction: column;
+  `}
+  ${media.tab`
+    gap: 60px;
+    flex-direction: column;
+  `}
+  ${media.desk`
+
+  `}
 `;
 const About = () => {
   return (

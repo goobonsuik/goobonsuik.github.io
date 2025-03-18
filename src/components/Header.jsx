@@ -5,7 +5,7 @@ import data from "/public/data/data.json";
 import styled, { css } from "styled-components";
 import S from "../styles/GlobalBlock.jsx";
 
-const Wrap = styled(S.Wrap)`
+const HeaderWrap = styled(S.Wrap)`
   position: fixed;
   top: 0;
   left: 50%;
@@ -23,11 +23,11 @@ const Logo = styled.div`
   background-repeat: no-repeat;
 `;
 
-const NavContainer = styled.div`
-  display: flex;
-  align-content: center;
-  gap: 20px;
-`;
+// const NavContainer = styled.div`
+//   display: flex;
+//   align-content: center;
+//   gap: 20px;
+// `;
 
 const NavItem = styled.div``;
 
@@ -45,7 +45,7 @@ function Header() {
   };
 
   return (
-    <Wrap>
+    <S.HeaderWrap>
       <S.Inner>
         <Logo
           onClick={() => {
@@ -53,7 +53,7 @@ function Header() {
           }}
         ></Logo>
 
-        <NavContainer>
+        <S.NavContainer>
           <NavItem
             onClick={() => {
               navigate("/");
@@ -68,9 +68,9 @@ function Header() {
           >
             Work
           </NavItem>
-        </NavContainer>
+        </S.NavContainer>
       </S.Inner>
-    </Wrap>
+    </S.HeaderWrap>
   );
 }
 

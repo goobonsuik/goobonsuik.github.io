@@ -10,14 +10,15 @@ const Container = styled.div`
   background-color: #fbfbf9;
 
   ${media.mbl`
-    color: red;
-  `}
-  ${media.tab`
     color: blue;
   `}
+  ${media.tab`
+    // padding: 120px 30px 0;
+    color: red;
+  `}
   ${media.desk`
-    color: purple;
     padding: 120px 80px 0;
+    color: pink;
   `}
 `;
 
@@ -35,6 +36,13 @@ const Inner = styled.div`
 
 const Section = styled.section`
   // min-height: ${(props) => props.$hei || "100vh"};
+
+  ${media.mbl`
+    margin-top: 60px;
+    `}
+  ${media.tab`
+    margin-top: 60px;
+    `}
 `;
 
 const Block = styled.div`
@@ -46,22 +54,49 @@ const Box = styled.div`
 
 const GridWrap = styled.div`
   display: grid;
-  grid-template-columns: ${(props) =>
-    props.$gridColumns || "repeat(2, minmax(428px, auto))"};
+  grid-template-columns: ${(props) => props.$gridColumns || "repeat(2, 1fr)"};
   gap: ${(props) => props.$gap || "20px"};
   justify-items: center;
+
+  ${media.mbl`
+    grid-template-columns: ${(props) => props.$gridColumns || "1fr"};
+    `}
+
+  ${media.tab`
+    grid-template-columns: ${(props) => props.$gridColumns || "1fr"};
+    `}
 `;
 
 const GridItem = styled.div`
   // border: 1px solid #ddd;
   // width: 100px; height: 100px;
   width: 100%;
+  min-height: 170px;
+`;
+
+const HeaderWrap = styled.div`
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 20px;
+
+  ${media.mbl`
+  `}
+  ${media.tab`
+  `}
+  ${media.desk`
+  `}
 `;
 
 const Gif = styled.div`
   width: ${(props) => props.$wid || "300px"};
   height: ${(props) => props.$hei || "300px"};
-  background-image: url(${(props) => props.$bg});
+  // background-image: url(${(props) => props.$bg});
+  background-color: #fff;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -74,6 +109,13 @@ const FlexBox = styled.div`
   display: flex;
 `;
 
+const NavContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+`;
+
 const S = {
   Container,
   Wrap,
@@ -83,8 +125,10 @@ const S = {
   Box,
   GridWrap,
   GridItem,
+  HeaderWrap,
   Gif,
   FlexBox,
+  NavContainer,
 };
 
 export default S;
