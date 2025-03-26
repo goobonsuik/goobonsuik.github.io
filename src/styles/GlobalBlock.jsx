@@ -105,6 +105,19 @@ const Gif = styled.div`
   // border: 1px solid #ddd;
 `;
 
+const Img = styled.div`
+  width: ${(props) => props.$wid || "300px"};
+  height: ${(props) => props.$hei || "300px"};
+  background-image: url(${(props) => props.$bg || "none"});
+  background-color: #fff;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  // border: 1px solid #ddd;
+`;
+
 const FlexBox = styled.div`
   display: flex;
 `;
@@ -127,6 +140,7 @@ const S = {
   GridItem,
   HeaderWrap,
   Gif,
+  Img,
   FlexBox,
   NavContainer,
 };
