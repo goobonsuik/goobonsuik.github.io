@@ -18,30 +18,49 @@ const GridItem = styled(S.GridItem)`
 function Painting() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imgUrl, setImgUrl] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const openModal = (url) => {
-    setImgUrl(url);
-    setIsModalOpen(!isModalOpen);
-
-    console.log(imgUrl);
-    
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setImgUrl(data.painting[index].url);
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => setIsModalOpen(false);
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = (prevIndex + 1) % data.painting.length;
+      setImgUrl(data.painting[nextIndex].url);
+      return nextIndex;
+    });
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) => {
+      const prevIndexAdjusted = (prevIndex - 1 + data.painting.length) % data.painting.length;
+      setImgUrl(data.painting[prevIndexAdjusted].url);
+      return prevIndexAdjusted;
+    });
+  };
+
   return (
     <S.Wrap>
       <Modal
-        modalProps={{
-          imgUrl,
-          isModalOpen,
-          setIsModalOpen,
-        }}
+        isModalOpen={isModalOpen}
+        src={imgUrl}
+        onClose={closeModal}
+        onNext={goToNext}
+        onPrev={goToPrev}
       />
-
       <S.GridWrap $gridColumns={"repeat(auto-fill, minmax(300px, auto))"}>
-        {data.painting.map((item, idx) => {
-          return (
-            <GridItem key={idx} $img={item.url} onClick={()=>{openModal(item.url)}}></GridItem>
-          );
-        })}
+        {data.painting.map((item, idx) => (
+          <GridItem
+            key={idx}
+            $img={item.url}
+            onClick={() => openModal(idx)}
+          ></GridItem>
+        ))}
       </S.GridWrap>
     </S.Wrap>
   );

@@ -13,7 +13,8 @@ const ModalWrap = styled.div`
 
   z-index: 999;
 
-  background-color: rgba(0, 0, 0, 0.6);
+  // background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.9);
 
   h2 {
     border-bottom: 2px solid pink;
@@ -50,7 +51,7 @@ const Content = styled.div`
 
   padding: 30px;
 
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   > div {
     display: flex;
@@ -74,45 +75,8 @@ const Img = styled(S.Img)`
   height: 100%;
 `;
 
-const Modal = ({ modalProps: { imgUrl, isModalOpen, setIsModalOpen } }) => {
-  const [imgDimensions, setImgDimensions] = useState({ width: 0, height: 0 });
-
-  const [isImgUrl, setIsImgUrl] = useState(imgUrl);
-
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const changeImage  = (direction) => {
-    const currentNumber = parseInt(imgUrl.match(/(\d+)\.jpg$/)[1], 10);
-
-    // 방향에 따라 번호 계산
-    const newNumber = direction === "next" ? currentNumber + 1 : currentNumber - 1;
-
-    // 새로운 이미지 URL 생성 (번호는 4자리로 유지)
-    const newImgUrl = `/images/painting/${String(newNumber).padStart(4, "0")}.jpg`;
-
-    setIsImgUrl(newImgUrl);
-
-  };
-
-  
-
-  useEffect(()=>{
-    const imgLoad = () => {
-      const img = new Image();
-      img.src = imgUrl;
-      img.onload = () =>
-        setImgDimensions({ width: img.width, height: img.height });
-    };
-
-    imgLoad();
-  },[isImgUrl]);
-
-
+const Modal = ({ isModalOpen, src, onClose, onNext, onPrev }) => {
   useEffect(() => {
-    
     isModalOpen
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
@@ -124,28 +88,11 @@ const Modal = ({ modalProps: { imgUrl, isModalOpen, setIsModalOpen } }) => {
   return (
     <>
       {isModalOpen && (
-        <ModalWrap className="modal-wrap" onClick={closeModal}>
-          <Content
-            className="content"
-            onClick={(e) => e.stopPropagation()}
-            width={`${imgDimensions.width}px`}
-            height={`${imgDimensions.height}px`}
-          >
-            <button
-              onClick={() => {
-                changeImage("prev");
-              }}
-            >
-              prev
-            </button>
-            <Img $bg={isImgUrl} alt="modal content"></Img>
-            <button
-              onClick={() => {
-                changeImage("next");
-              }}
-            >
-              next
-            </button>
+        <ModalWrap className="modal-wrap" onClick={onClose}>
+          <Content className="content" onClick={(e) => e.stopPropagation()}>
+            <button onClick={onPrev}>prev</button>
+            <img src={src} alt="Modal 이미지" style={{ width: "300px" }} />
+            <button onClick={onNext}>next</button>
           </Content>
         </ModalWrap>
       )}
