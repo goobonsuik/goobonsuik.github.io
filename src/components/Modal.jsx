@@ -50,26 +50,25 @@ const Content = styled.div`
 `;
 
 const Button = styled.button`
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
   background-image: url("/images/arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  background-color: transparent;
   filter: ${(props) => props.color || "none"};
 `;
 
 const TopBtnWrap = styled.div`
-  border: 1px solid #fff;
-
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   color: #fff;
+  border: 1px solid #fff;
 
   .count {
     display: flex;

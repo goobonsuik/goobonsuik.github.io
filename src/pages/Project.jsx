@@ -16,24 +16,18 @@ const GridWrap = styled(S.GridWrap)`
     gap: 30px 10px;
   `}
 `;
-const GridItem = styled(S.GridItem)`
-  // width: 510px;
-  // height: 288px;
-  // border: 1px solid #ddd;
 
+const GridItem = styled(S.GridItem)`
   .react-player {
     width: 100% !important;
     height: 100% !important;
   }
 
   ${media.desk`
-    // border:3px solid #f00;
   `}
   ${media.tab`
-    // border:3px solid #0f0;
   `}
   ${media.mbl`
-    // border:3px solid #00f;
   `}
 `;
 
