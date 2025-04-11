@@ -14,8 +14,7 @@ const GridWrap = styled(S.GridWrap)`
   gap: 50px 10px;
   ${media.mbl`
     gap: 30px 10px;
-  
-    `}
+  `}
 `;
 const GridItem = styled(S.GridItem)`
   // width: 510px;
@@ -27,16 +26,14 @@ const GridItem = styled(S.GridItem)`
     height: 100% !important;
   }
 
-  ${media.mbl`
-  // border:3px solid #00f;
-
+  ${media.desk`
+    // border:3px solid #f00;
   `}
   ${media.tab`
-  // border:3px solid #0f0;
-
+    // border:3px solid #0f0;
   `}
-  ${media.desk`
-      // border:3px solid #f00;
+  ${media.mbl`
+    // border:3px solid #00f;
   `}
 `;
 

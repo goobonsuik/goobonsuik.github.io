@@ -9,16 +9,15 @@ const Container = styled.div`
   background-color: #ddd;
   background-color: #fbfbf9;
 
-  ${media.mbl`
-    color: blue;
-  `}
-  ${media.tab`
-    // padding: 120px 30px 0;
-    color: red;
-  `}
   ${media.desk`
     padding: 120px 80px 0;
     color: pink;
+  `}
+  ${media.tab`
+    color: red;
+  `}
+  ${media.mbl`
+    color: blue;
   `}
 `;
 
@@ -35,41 +34,37 @@ const Inner = styled.div`
 `;
 
 const Section = styled.section`
-  // min-height: ${(props) => props.$hei || "100vh"};
-
-  ${media.mbl`
-    margin-top: 60px;
-    `}
   ${media.tab`
     margin-top: 60px;
-    `}
+  `}
+  ${media.mbl`
+    margin-top: 60px;
+  `}
 `;
 
 const Block = styled.div`
   display: flex;
 `;
-const Box = styled.div`
-  // border: 1px solid #ddd;
-`;
+const Box = styled.div``;
 
 const GridWrap = styled.div`
   display: grid;
   grid-template-columns: ${(props) => props.$gridColumns || "repeat(2, 1fr)"};
+  grid-auto-rows: minmax(300px, auto);
+
   gap: ${(props) => props.$gap || "20px"};
   justify-items: center;
-
-  ${media.mbl`
-    grid-template-columns: ${(props) => props.$gridColumns || "1fr"};
-    `}
-
+  
   ${media.tab`
     grid-template-columns: ${(props) => props.$gridColumns || "1fr"};
-    `}
+  `}
+  ${media.mbl`
+    grid-template-columns: ${(props) => props.$gridColumns || "1fr"};
+  `}
+
 `;
 
 const GridItem = styled.div`
-  // border: 1px solid #ddd;
-  // width: 100px; height: 100px;
   width: 100%;
   min-height: 170px;
 `;
@@ -84,25 +79,22 @@ const HeaderWrap = styled.div`
   padding: 0 30px;
   margin-top: 20px;
 
-  ${media.mbl`
+  ${media.desk`
   `}
   ${media.tab`
   `}
-  ${media.desk`
+  ${media.mbl`
   `}
 `;
 
 const Gif = styled.div`
   width: ${(props) => props.$wid || "300px"};
   height: ${(props) => props.$hei || "300px"};
-  // background-image: url(${(props) => props.$bg});
   background-color: #fff;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
-  // border: 1px solid #ddd;
 `;
 
 const Img = styled.div`
@@ -114,8 +106,6 @@ const Img = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
-  // border: 1px solid #ddd;
 `;
 
 const FlexBox = styled.div`

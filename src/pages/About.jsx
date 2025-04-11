@@ -15,12 +15,13 @@ const Section = styled(S.Section)`
   font-size: 20px;
   font-weight: 600;
 
+  ${media.tab`
+    
+  `}
+
   ${media.mbl`
     margin-bottom: 60px;
     font-size: 18px;
-  `}
-  ${media.tab`
-    
   `}
 `;
 
@@ -33,16 +34,16 @@ const Block = styled(S.Block)`
   align-items: center;
   // border: 1px solid #ddd;
 
-  ${media.mbl`
-gap: 60px;
-    flex-direction: column;
+  ${media.desk`
+
   `}
   ${media.tab`
     gap: 60px;
     flex-direction: column;
   `}
-  ${media.desk`
-
+  ${media.mbl`
+    gap: 60px;
+    flex-direction: column;
   `}
 `;
 const About = () => {

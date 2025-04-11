@@ -5,7 +5,6 @@ import styled, { css } from "styled-components";
 import S from "../styles/GlobalBlock.jsx";
 import media from "../styles/media.jsx";
 
-
 const Section = styled(S.Section)`
   display: flex;
   align-items: center;
@@ -37,11 +36,11 @@ const Work = () => {
 
   return (
     <>
-      <Section $hei={'50vh'}>
+      <Section $hei={"50vh"}>
         <Block>
           <S.Box>
             작업에 썼던 bg와 더빙들은 혹여나 저작권으로 인해서 <br />
-            유튜브 무료 bg로 영상속도는 전반적으로 <br/>
+            유튜브 무료 bg로 영상속도는 전반적으로 <br />
             조금 빠르게 편집되었어요~
           </S.Box>
           <S.Gif
@@ -53,20 +52,8 @@ const Work = () => {
       </Section>
 
       <S.NavContainer>
-        <S.Box
-          onClick={() => {
-            navigate("/work");
-          }}
-        >
-          project
-        </S.Box>
-        <S.Box
-          onClick={() => {
-            navigate("/work/painting");
-          }}
-        >
-          painting
-        </S.Box>
+        <S.Box onClick={() => navigate("/work")}>project</S.Box>
+        <S.Box onClick={() => navigate("/work/painting")}>painting</S.Box>
       </S.NavContainer>
 
       <S.Section>
