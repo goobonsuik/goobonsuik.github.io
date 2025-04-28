@@ -9,17 +9,14 @@ const Icon = styled.div`
   width: 260px;
   height: 260px;
   border: 1px solid #ddd;
-  // background-image: url('/images/logo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
-const NavContainer = styled.ul`
-
-`
+const NavContainer = styled.ul``;
 const NavItem = styled.li`
   margin-bottom: 50px;
-`
+`;
 
 const Insta = styled.p`
   width: 48px;
@@ -44,27 +41,16 @@ function Nav() {
 
   return (
     <S.Wrap>
-      <Icon
-        onClick={() => {
-          navigate("/");
-        }}
-      ></Icon>
+      <Icon onClick={() => navigate("/")}></Icon>
 
       <NavContainer>
         {data.nav.map((item, idx) => {
           return (
             <NavItem
               key={idx}
-              onClick={() => {
-                navigate(item.link);
-              }}
-              onMouseOver={() => {
-                navMouseEvt(idx);
-              }}
-              onMouseOut={() => {
-                navMouseEvt(idx);
-              }}
-
+              onClick={() => navigate(item.link)}
+              onMouseOver={() => navMouseEvt(idx)}
+              onMouseOut={() => navMouseEvt(idx)}
               className={
                 navHover[idx] ? "colorPickerVisible" : "colorPickerInvisible"
               }

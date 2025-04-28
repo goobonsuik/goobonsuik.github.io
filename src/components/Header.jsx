@@ -23,14 +23,7 @@ const Logo = styled.div`
   background-repeat: no-repeat;
 `;
 
-// const NavContainer = styled.div`
-//   display: flex;
-//   align-content: center;
-//   gap: 20px;
-// `;
-
 const NavItem = styled.div``;
-
 
 function Header() {
   const navigate = useNavigate();
@@ -47,27 +40,11 @@ function Header() {
   return (
     <S.HeaderWrap>
       <S.Inner>
-        <Logo
-          onClick={() => {
-            navigate("/");
-          }}
-        ></Logo>
+        <Logo onClick={() => navigate("/")}></Logo>
 
         <S.NavContainer>
-          <NavItem
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            About
-          </NavItem>
-          <NavItem
-            onClick={() => {
-              navigate("/work");
-            }}
-          >
-            Work
-          </NavItem>
+          <NavItem onClick={() => navigate("/")}>About</NavItem>
+          <NavItem onClick={() => navigate("/work")}>Work</NavItem>
         </S.NavContainer>
       </S.Inner>
     </S.HeaderWrap>

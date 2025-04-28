@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import S from "./styles/GlobalBlock.jsx";
 import media from "./styles/media.jsx";
 import theme from "./styles/theme.jsx";
+import "./App.css";
 
 import About from "./pages/About.jsx";
 import Project from "./pages/Project.jsx";

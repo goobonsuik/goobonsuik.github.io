@@ -11,14 +11,9 @@ const Container = styled.div`
 
   ${media.desk`
     padding: 120px 80px 0;
-    color: pink;
   `}
-  ${media.tab`
-    color: red;
-  `}
-  ${media.mbl`
-    color: blue;
-  `}
+  ${media.tab``}
+  ${media.mbl``}
 `;
 
 const Wrap = styled.div`
