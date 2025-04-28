@@ -6,9 +6,6 @@ import Assistant from '../fonts/Assistant-Regular.woff2';
 import NotoSans from '../fonts/NotoSansKR-Light.woff2';
 import NotoSansRegular from '../fonts/NotoSansKR-Regular.woff2';
 import NotoSansMedium from '../fonts/NotoSansKR-Medium.woff2';
-import Inter300 from "../fonts/Inter-Light.woff2";
-import Inter400 from "../fonts/Inter-Regular.woff2";
-import Inter500 from "../fonts/Inter-Medium.woff2";
 
 const GlobalStyles = createGlobalStyle`
   * { box-sizing: border-box; }
@@ -58,19 +55,17 @@ const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Inter';
     font-weight: 300;
-    src: url(${Inter300}) format('woff2');
+    src: url('/fonts/Inter-Light.woff2') format('woff2');
   }
-
   @font-face {
     font-family: 'Inter';
     font-weight: 400;
-    src: url(${Inter400}) format('woff2');
+    src: url('/fonts/Inter-Regular.woff2') format('woff2');
   }
-
   @font-face {
     font-family: 'Inter';
     font-weight: 500;
-    src: url(${Inter500}) format('woff2');
+    src: url('/fonts/Inter-Medium.woff2') format('woff2');
   }
 `;
 
