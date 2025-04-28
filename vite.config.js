@@ -5,5 +5,9 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: "/goobonsuik/" // 저장소 이름으로 수정
+  base: "/goobonsuik/", // 저장소 이름으로 수정
+  esbuild: {
+    loader: "jsx",
+    include: /src\/.*\.jsx?$/, // JSX 파일 처리
+  },
 })
