@@ -1,25 +1,22 @@
 /* eslint-disable */
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import OutfitMedium from '../fonts/Outfit-Medium.woff2';
 import OutfitLight from '../fonts/Outfit-Light.woff2';
 import Assistant from '../fonts/Assistant-Regular.woff2';
 import NotoSans from '../fonts/NotoSansKR-Light.woff2';
 import NotoSansRegular from '../fonts/NotoSansKR-Regular.woff2';
 import NotoSansMedium from '../fonts/NotoSansKR-Medium.woff2';
+import Inter300 from "../fonts/Inter-Light.woff2";
+import Inter400 from "../fonts/Inter-Regular.woff2";
+import Inter500 from "../fonts/Inter-Medium.woff2";
 
 const GlobalStyles = createGlobalStyle`
-  *{box-sizing:border-box;}
+  * { box-sizing: border-box; }
 
   body {
     position: relative;
-    font-family: 'OutfitLight', 'NotoSans';
-    // background-color: #edf2f6;
-    // -ms-overflow-style: none;
+    font-family: 'Inter', 'OutfitLight', 'NotoSans';
   }
-  
-  // ::-webkit-scrollbar {
-  //   display: none;
-  // }
 
   @font-face {
     font-family: 'OutfitLight';
@@ -57,6 +54,24 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     src: url(${NotoSansMedium}) format('truetype');
   }
- 
+
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    src: url(${Inter300}) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url(${Inter400}) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    src: url(${Inter500}) format('woff2');
+  }
 `;
+
 export default GlobalStyles;
